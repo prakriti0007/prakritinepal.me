@@ -1,9 +1,10 @@
-name: Deploy website
+name: Zola Build and Deploy
 
 on:
   push:
     branches:
-      - main
+      - master
+  pull_request:
 
 permissions:
   contents: write
@@ -12,18 +13,23 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      ZOLA_VERSION: 'v0.19.1'
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install Zola
         run: |
-          curl -s https://get.zola.rs | bash
-          sudo mv zola /usr/local/bin/
+          curl -sSL -o /tmp/zola.tar.gz https://github.com/getzola/zola/releases/download/${{ env.ZOLA_VERSION }}/zola-${{ env.ZOLA_VERSION }}-x86_64-unknown-linux-gnu.tar.gz
+          tar -xf /tmp/zola.tar.gz -C /usr/local/bin
+          zola --version
 
-      - name: Build the website
+      - name: Build the site
         run: |
           zola build
+
 
       - name: Deploy build to gh-pages branch
         uses: crazy-max/ghaction-github-pages@v4
@@ -32,4 +38,3 @@ jobs:
           build_dir: public
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
