@@ -1,36 +1,35 @@
-name: Publish demo on GitHub Pages
+name: Deploy website
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Zola
+        run: |
+          curl -s https://get.zola.rs | bash
+          sudo mv zola /usr/local/bin/
+
+      - name: Build the website
+        run: |
+          zola build
+
+      - name: Deploy build to gh-pages branch
+        uses: crazy-max/ghaction-github-pages@v4
         with:
-          submodules: true
+          target_branch: gh-pages
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Pages artifact
-        uses: st1020/zola-deploy@v1
-        with:
-          version: v0.19.1
-
-  deploy:
-    needs: build
-
-    permissions:
-      pages: write
-      id-token: write
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
