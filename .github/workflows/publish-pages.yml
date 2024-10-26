@@ -3,7 +3,7 @@ name: Zola Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 permissions:
