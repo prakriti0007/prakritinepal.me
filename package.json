@@ -1,13 +1,13 @@
 {
-  "name": "kita",
+  "name": "prakriti's personal site",
   "version": "0.1.0",
-  "description": "Kita is a clean, elegant and simple blog theme for Zola.",
-  "homepage": "https://github.com/st1020/kita",
+  "description": "My personal website.",
+  "homepage": "https://prakritinepal.me",
   "license": "MIT",
-  "author": "st1020 <me@st1020.com>",
+  "author": "prakriti0007",
   "repository": {
     "type": "git",
-    "url": "https://github.com/st1020/kita.git"
+    "url": "https://github.com/prakriti007/prakritinepal.me"
   },
   "scripts": {
     "dev": "pnpm tailwindcss -i ./static/app.css -o ./static/main.css --watch",
