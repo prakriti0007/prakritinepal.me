@@ -3,7 +3,7 @@ title = "About"
 path = "about"
 +++
 
-## Hello World
+## Hello Pals,
 
-This is prakriti Nepal from himayalas. 
-I love reading books.
+This is Prakriti Nepal, an international student currently studying here at The States. 
+I hail from a beautiful country called Nepal! I love Momo...Yum! 

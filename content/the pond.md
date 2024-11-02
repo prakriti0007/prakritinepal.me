@@ -8,4 +8,11 @@ tags = ["markdown", "css", "html"]
 cover.image = "images/pond.jpeg"
 cover.alt = "A Markdown logo"
 +++
+
+
+
 HOLA!
+
+**NJ** 
+
+*NYC* 
