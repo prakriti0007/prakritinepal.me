@@ -1,11 +1,11 @@
 +++
-title = "Markdown Syntax Guide"
+title = "The pond near my apartment"
 date = "2022-10-20"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 [taxonomies]
 tags = ["markdown", "css", "html"]
 [extra]
-cover.image = "images/markdown-syntax.png"
+cover.image = "images/pond.jpeg"
 cover.alt = "A Markdown logo"
 +++
 
