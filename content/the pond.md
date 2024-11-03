@@ -1,5 +1,5 @@
 +++
-title = "The pond near my apartment"
+title = "The Pond near my Apartment"
 date = "2022-10-20"
 description = "I've always loved going to this pond whenever I have the slightest inconvenience."
 [taxonomies]
