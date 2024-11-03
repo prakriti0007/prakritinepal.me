@@ -1,12 +1,12 @@
 +++
 title = "The Pond near my Apartment"
-date = "2022-10-20"
+date = "2024-11-02"
 description = "I've always loved going to this pond whenever I have the slightest inconvenience."
 [taxonomies]
-tags = ["markdown", "css", "html"]
+tags = ["memerising", "ecstatic", "sanctuary"]
 [extra]
 cover.image = "images/pond.jpeg"
-cover.alt = "A Markdown logo"
+cover.alt = "Pond"
 +++
 
 
