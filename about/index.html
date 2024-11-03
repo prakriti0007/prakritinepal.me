@@ -1,0 +1,337 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    About - prakritinepal
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="About" />
+  <meta name="author" content="prakriti" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About" />
+  <meta property="og:site_name" content="prakritinepal" />
+  <meta property="og:description" content="About" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;prakritinepal.me&#x2F;about&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://prakritinepal.me/icons/profile.png" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://prakritinepal.me/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://prakritinepal.me/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://prakritinepal.me/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://prakritinepal.me/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://prakritinepal.me/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;prakritinepal.me&#x2F;about&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://prakritinepal.me">prakritinepal</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://prakritinepal.me/projects"
+            >Projects</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://prakritinepal.me/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://prakritinepal.me/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://prakritinepal.me/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">About</h1>
+  </header>
+
+  <section><h2 id="namaste-and-hello">Namaste and hello!</h2>
+<p>I’m Prakriti Nepal—yes, Nepal! And, fun fact, I’m actually from the country called Nepal. Imagine being named London and actually being from the UK! My country’s known for the Gorkhalis, brave warriors with an unbreakable spirit. I like to think I bring a bit of that courage and determination to everything I do, especially when it comes to helping others.
+I’m a sophomore here at William Paterson University of New Jersey, double-majoring in Computer Science and Mathematics. During the day, I’m coding and crunching numbers, and by night… Well, it’s mostly the same, but with extra snacks!
+I’m always eager to share my culture. Whether it’s introducing you to Nepali tea or teaching a few words in Nepali, I’d love to share a piece of home with all of you! I know being in a new place can sometimes feel overwhelming, especially if English isn’t your first language. I’m more than happy to adjust, to learn together, and to help everyone feel included. I believe we’re all in this together, and my goal is to make earth a place where everyone feels they belong.
+So, here’s to an incredible year ahead!</p>
+<p><strong>CHEERS</strong></p>
+</section>
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    
+    
+    &copy; 2020 - 2024
+    
+    <a class="link" href="https://prakritinepal.me">
+      prakriti
+    </a>
+     |
+    
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a id="commit-message" class="commit-message" href="#" target="_blank">
+      <span>💻</span> Last commit: <span id="commit-text"></span>
+    </a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+<style>
+  .commit-message {
+    font-style: italic;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+</style>
+
+<script>
+  const githubUsername = "prakriti0007";
+  const repositoryName = "prakritinepal.me";
+  const commitCacheKey = "cachedCommit";
+  const timestampKey = "cachedCommitTimestamp";
+  const cacheDuration = 60 * 60 * 1000; // 1 hour in milliseconds
+
+  async function fetchLatestCommit() {
+    const now = new Date().getTime();
+    const cachedCommit = localStorage.getItem(commitCacheKey);
+    const cachedTimestamp = localStorage.getItem(timestampKey);
+
+    if (cachedCommit && cachedTimestamp && now - cachedTimestamp < cacheDuration) {
+      // Use cached commit if it's less than 1 hour old
+      displayCommitMessage(JSON.parse(cachedCommit));
+    } else {
+      try {
+        const response = await fetch(`https://api.github.com/repos/${githubUsername}/${repositoryName}/commits`);
+        
+        // Check if the response is successful
+        if (!response.ok) {
+          throw new Error("Failed to fetch the latest commit.");
+        }
+        
+        const data = await response.json();
+        const latestCommit = data[0];
+        const latestCommitMessage = latestCommit.commit.message;
+        
+        // Truncate if the message is longer than 3 words
+        const truncatedMessage = latestCommitMessage.split(" ").slice(0, 3).join(" ");
+        const displayMessage = latestCommitMessage.split(" ").length > 3 ? `${truncatedMessage}...` : truncatedMessage;
+
+        // Cache the commit data
+        const commitData = {
+          message: displayMessage,
+          url: latestCommit.html_url,
+        };
+        localStorage.setItem(commitCacheKey, JSON.stringify(commitData));
+        localStorage.setItem(timestampKey, now);
+
+        displayCommitMessage(commitData);
+      } catch (error) {
+        console.error("Failed to fetch commit message:", error);
+      }
+    }
+  }
+
+  function displayCommitMessage(commitData) {
+    const commitText = document.getElementById("commit-text");
+    const commitLink = document.getElementById("commit-message");
+    
+    if (commitData && commitData.message && commitData.url) {
+      commitText.innerText = commitData.message;
+      commitLink.href = commitData.url; // Link to the commit diff page on GitHub
+    } else {
+      console.error("Commit data is missing or incomplete.");
+    }
+  }
+
+  fetchLatestCommit();
+</script>
+
+
+    <!-- Body End inject -->
+    
+  </body>
+</html>

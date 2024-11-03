@@ -1,0 +1,8 @@
+[[project]]
+name = "Personal Website"
+desc = "Mundane Mondays"
+tags = ["Zola", "Website"]
+links = [
+    { name = "github", url = "https://github.com/prakriti0007/prakritinepal.me" },
+    { name = "docs", url = "https://prakritinepal.me" },
+]

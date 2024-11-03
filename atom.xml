@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>prakritinepal</title>
+    <subtitle>Prakriti&#x27;s personal website</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://prakritinepal.me/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://prakritinepal.me"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-11-02T00:00:00+00:00</updated>
+    <id>https://prakritinepal.me/atom.xml</id>
+    <entry xml:lang="en">
+        <title>The Pond near my Apartment</title>
+        <published>2024-11-02T00:00:00+00:00</published>
+        <updated>2024-11-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              prakriti
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://prakritinepal.me/the-pond/"/>
+        <id>https://prakritinepal.me/the-pond/</id>
+        
+        <content type="html" xml:base="https://prakritinepal.me/the-pond/">&lt;p&gt;&lt;strong&gt;This pond&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There’s a beautiful pond near my apartment, a hidden sanctuary where ducks and geese find their rhythm. I stumbled upon it one day during a drive, and ever since, it has felt like a piece of home, a place just for me. It remains a secret, untouched by anyone else I know, and there’s a quiet magic in that solitude.&lt;&#x2F;p&gt;
+&lt;p&gt;What I cherish most is the pond’s stillness. No matter how full the day has been, it holds an unbreakable calm. At sunset, the light glows warmly across the water, and the ducks and geese glide together, adding a gentle harmony to the scene. In the mornings, people come to fish — a peaceful routine of catching and releasing that fits perfectly with the pond’s spirit. I’ve joined them, learning to fish for the first time, discovering it as a way to connect, quietly and naturally.&lt;&#x2F;p&gt;
+&lt;p&gt;The colors of the pond shift with the day: green in the morning, golden under the sun, and a soft pinkish black as night falls. In a world of change, I know this pond will stay just as it is — calm, beautiful, and a source of peace I can always return to.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
