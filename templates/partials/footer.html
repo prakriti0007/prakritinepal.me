@@ -40,26 +40,61 @@
 </style>
 
 <script>
-  // Define the GitHub username and repository name here
   const githubUsername = "prakriti0007";
   const repositoryName = "prakritinepal.me";
+  const commitCacheKey = "cachedCommit";
+  const timestampKey = "cachedCommitTimestamp";
+  const cacheDuration = 60 * 60 * 1000; // 1 hour in milliseconds
 
   async function fetchLatestCommit() {
-    try {
-      const response = await fetch(`https://api.github.com/repos/${githubUsername}/${repositoryName}/commits`);
-      const data = await response.json();
-      const latestCommit = data[0];
-      const latestCommitMessage = latestCommit.commit.message;
-      const truncatedMessage = latestCommitMessage.split(" ").slice(0, 3).join(" ");
-      const displayMessage = latestCommitMessage.split(" ").length > 3 ? `${truncatedMessage}...` : truncatedMessage;
+    const now = new Date().getTime();
+    const cachedCommit = localStorage.getItem(commitCacheKey);
+    const cachedTimestamp = localStorage.getItem(timestampKey);
 
-      // Set the commit message text and link to the diff page
-      const commitText = document.getElementById("commit-text");
-      const commitLink = document.getElementById("commit-message");
-      commitText.innerText = displayMessage;
-      commitLink.href = latestCommit.html_url; // Link to the commit diff page
-    } catch (error) {
-      console.error("Failed to fetch commit message:", error);
+    if (cachedCommit && cachedTimestamp && now - cachedTimestamp < cacheDuration) {
+      // Use cached commit if it's less than 1 hour old
+      displayCommitMessage(JSON.parse(cachedCommit));
+    } else {
+      try {
+        const response = await fetch(`https://api.github.com/repos/${githubUsername}/${repositoryName}/commits`);
+        
+        // Check if the response is successful
+        if (!response.ok) {
+          throw new Error("Failed to fetch the latest commit.");
+        }
+        
+        const data = await response.json();
+        const latestCommit = data[0];
+        const latestCommitMessage = latestCommit.commit.message;
+        
+        // Truncate if the message is longer than 3 words
+        const truncatedMessage = latestCommitMessage.split(" ").slice(0, 3).join(" ");
+        const displayMessage = latestCommitMessage.split(" ").length > 3 ? `${truncatedMessage}...` : truncatedMessage;
+
+        // Cache the commit data
+        const commitData = {
+          message: displayMessage,
+          url: latestCommit.html_url,
+        };
+        localStorage.setItem(commitCacheKey, JSON.stringify(commitData));
+        localStorage.setItem(timestampKey, now);
+
+        displayCommitMessage(commitData);
+      } catch (error) {
+        console.error("Failed to fetch commit message:", error);
+      }
+    }
+  }
+
+  function displayCommitMessage(commitData) {
+    const commitText = document.getElementById("commit-text");
+    const commitLink = document.getElementById("commit-message");
+    
+    if (commitData && commitData.message && commitData.url) {
+      commitText.innerText = commitData.message;
+      commitLink.href = commitData.url; // Link to the commit diff page on GitHub
+    } else {
+      console.error("Commit data is missing or incomplete.");
     }
   }
 
